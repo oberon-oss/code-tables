@@ -7,7 +7,7 @@
     <parent>
         <groupId>eu.oberon.oss</groupId>
         <artifactId>bom-21</artifactId>
-        <version>1.21.0</version>
+        <version>1.21.1</version>
     </parent>
 
     <groupId>eu.oberon.oss.tools</groupId>
