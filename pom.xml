@@ -19,6 +19,7 @@
             ${maven.multiModuleProjectDirectory}/coverage/target/site/jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
         <argLine/>
+        <sonar.organization>oberon-oss-eu</sonar.organization>
     </properties>
 
     <distributionManagement>
