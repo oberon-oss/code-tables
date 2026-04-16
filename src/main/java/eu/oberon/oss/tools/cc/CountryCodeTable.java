@@ -1,6 +1,7 @@
 package eu.oberon.oss.tools.cc;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -19,7 +20,7 @@ import static eu.oberon.oss.tools.cc.CountryCodeTableLookupKeys.NAME;
  * @author TigerLilly64
  * @since 1.0.0
  */
-@Log4j2
+@Slf4j
 public final class CountryCodeTable {
 
     private static final String DEFAULT_FIELD_SEPARATOR = ";";

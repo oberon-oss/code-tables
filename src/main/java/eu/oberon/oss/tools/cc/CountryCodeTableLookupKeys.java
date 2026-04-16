@@ -26,7 +26,7 @@ public enum CountryCodeTableLookupKeys {
      */
     ISO3166_ALPHA_3,
     /**
-     * Represents the ' Standard Country or Area Codes for Statistical Use' code of the country to lookup.
+     * Represents the 'Standard Country or Area Codes for Statistical Use' code of the country to lookup.
      *
      * @since 1.0.0
      */

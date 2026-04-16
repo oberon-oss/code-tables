@@ -1,6 +1,7 @@
 package eu.oberon.oss.tools.cc;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.regex.Pattern;
@@ -11,7 +12,7 @@ import java.util.regex.Pattern;
  * @author TigerLilly64
  * @since 1.0.0
  */
-@Log4j2
+@Slf4j
 public record CountryCodeTableEntryImpl(
         @NotNull String countryName,
         @NotNull String iso3166Alpha2Code,
