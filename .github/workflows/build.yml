@@ -4,7 +4,7 @@ on:
     branches:
       - master
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
 jobs:
   build:
     name: Build and analyze
@@ -33,14 +33,17 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BRANCH: ${{ github.head_ref }}
+          PR_BASE: ${{ github.base_ref }}
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            mvn  -B verify -P coverage org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+            mvn -B verify -P coverage org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=oberon-oss_code-tables \
             -Dsonar.organization=oberon-oss-eu \
-            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
-            -Dsonar.pullrequest.branch=${{ github.head_ref }} \
-            -Dsonar.pullrequest.base=${{ github.base_ref }}
+            -Dsonar.pullrequest.key="$PR_NUMBER" \
+            -Dsonar.pullrequest.branch="$PR_BRANCH" \
+            -Dsonar.pullrequest.base="$PR_BASE"
           else
             mvn -B verify -P coverage org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=oberon-oss_code-tables \
