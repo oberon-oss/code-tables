@@ -15,9 +15,8 @@
     <version>2.1.0</version>
 
     <properties>
-        <sonar.coverage.jacoco.xmlReportPaths>
-            ${maven.multiModuleProjectDirectory}/coverage/target/site/jacoco-aggregate/jacoco.xml
-        </sonar.coverage.jacoco.xmlReportPaths>
+        <!--suppress XmlUnresolvedReference -->
+        <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
         <argLine/>
         <sonar.projectkey>oberon-oss_code-tables</sonar.projectkey>
     </properties>
