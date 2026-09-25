@@ -10,7 +10,7 @@
         <version>3.25.9</version>
     </parent>
 
-    <groupId>eu.oberon.oss.tools</groupId>
+    <groupId>eu.oberon-oss.tools</groupId>
     <artifactId>code-tables</artifactId>
     <version>2.1.0</version>
 
