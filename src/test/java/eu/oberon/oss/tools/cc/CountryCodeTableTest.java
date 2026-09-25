@@ -29,12 +29,14 @@ class CountryCodeTableTest {
         CountryCodeTableEntry gb = CountryCodeTable.getDefaultInstance().findEntry("GB", ISO3166_ALPHA_2);
         CountryCodeTableEntry um = CountryCodeTable.getDefaultInstance().findEntry("UM", ISO3166_ALPHA_2);
         CountryCodeTableEntry us = CountryCodeTable.getDefaultInstance().findEntry("US", ISO3166_ALPHA_2);
+        CountryCodeTableEntry xk = CountryCodeTable.getDefaultInstance().findEntry("XK", ISO3166_ALPHA_2);
 
         return Stream.of(
                 Arguments.of(us, new String[]{"United States of America (the)", "US", "USA", "840"}),
                 Arguments.of(um, new String[]{"United States Minor Outlying Islands (the)", "UM", "UMI", "581"}),
                 Arguments.of(nl, new String[]{"Netherlands (the)", "NL", "NLD", "528"}),
-                Arguments.of(gb, new String[]{"United Kingdom of Great Britain and Northern Ireland (the)", "GB", "GBR", "826"})
+                Arguments.of(gb, new String[]{"United Kingdom of Great Britain and Northern Ireland (the)", "GB", "GBR", "826"}),
+                Arguments.of(xk, new String[]{"Kosovo", "XK", "XKX", "412"})
         );
     }
 
@@ -58,7 +60,7 @@ class CountryCodeTableTest {
     @Test
     void defaultInstanceTest() throws IOException {
         CountryCodeTable cct1 = assertDoesNotThrow(CountryCodeTable::getDefaultInstance);
-        assertEquals(249, cct1.getEntryCount());
+        assertEquals(250, cct1.getEntryCount());
         CountryCodeTable cct2 = CountryCodeTable.getDefaultInstance();
         assertEquals(cct1, cct2);
     }
@@ -67,7 +69,7 @@ class CountryCodeTableTest {
     void loadFromFileTest() {
         File fromFile = new File("src/main/resources/country-codes.csv");
         CountryCodeTable instance = assertDoesNotThrow(() -> CountryCodeTable.getInstance(fromFile));
-        assertEquals(249, instance.getEntryCount());
+        assertEquals(250, instance.getEntryCount());
     }
 
     public static Stream<Arguments> loadFromFileWithInvalidContentTest() {
