@@ -6,8 +6,8 @@
 
     <parent>
         <groupId>eu.oberon-oss</groupId>
-        <artifactId>boms</artifactId>
-        <version>3.25.9</version>
+        <artifactId>project-settings-parent</artifactId>
+        <version>4.25.3</version>
     </parent>
 
     <groupId>eu.oberon-oss.tools</groupId>

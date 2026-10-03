@@ -8,6 +8,11 @@ import java.util.regex.Pattern;
 /**
  * Default implementation for the {@link CountryCodeTableEntry} interface.
  *
+ * @param countryName       Name of the country record to create. Cannot be blank.
+ * @param iso3166Alpha2Code The ISO 3166 Alpha 2 character code for the country. Must match the pattern [A-Z]{2}.
+ * @param iso3166Alpha3Code The ISO 3166 Alpha 3 character code for the country. Must match the pattern [A-Z]{3}.
+ * @param unm49Code         The UNM49 number for the country. Must match the pattern \d{3}.
+ *
  * @author TigerLilly64
  * @since 1.0.0
  */
@@ -25,7 +30,7 @@ public record CountryCodeTableEntryImpl(
      * @param countryName       Name of the country record to create. Cannot be blank.
      * @param iso3166Alpha2Code The ISO 3166 Alpha 2 character code for the country. Must match the pattern [A-Z]{2}.
      * @param iso3166Alpha3Code The ISO 3166 Alpha 3 character code for the country. Must match the pattern [A-Z]{3}.
-     * @param unm49Code         The UNM49  number for the country. Must match the pattern \d{3}.
+     * @param unm49Code         The UNM49 number for the country. Must match the pattern \d{3}.
      *
      * @throws IllegalStateException if any of the parameters are invalid
      * @since 1.0.0

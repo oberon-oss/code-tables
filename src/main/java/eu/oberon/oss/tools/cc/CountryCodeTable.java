@@ -68,7 +68,7 @@ public final class CountryCodeTable {
     private static CountryCodeTable defaultCountryCodeTable;
 
     /**
-     * Returns the default provided country code table.
+     * Returns the default country code table.
      * <p>
      * The default country code table is only loaded once. Multiple calls to this method will yield the same country
      * code table instance
@@ -88,7 +88,7 @@ public final class CountryCodeTable {
     }
 
     /**
-     * Loads a user supplied country table from the specified file.
+     * Loads a user-supplied country table from the specified file.
      *
      * @param fromFile The file to read from.
      *
@@ -104,7 +104,7 @@ public final class CountryCodeTable {
     }
 
     /**
-     * Loads a user supplied country table from the specified input stream.
+     * Loads a user-supplied country table from the specified input stream.
      *
      * @param inputStream The input stream to read from.
      *
